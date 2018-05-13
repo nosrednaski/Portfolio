@@ -1,0 +1,268 @@
+/* ####################### Defaults #########################*/
+html {
+    height: 100%;
+}
+
+:root {
+    --red: rgba(255, 0, 0, 0.575);
+    --yellow: #ffd300;
+    --t-yellow: #ffd5006e;
+    --blue: rgba(43, 43, 226, 0.95);
+}
+
+body {
+    margin: 0;
+    background: url("../images/dark-mosaic.png");
+    background-size: 200px 200px;
+    background-color: rgba(248, 248, 248, 0.01);
+    min-height: 100%;
+    display: grid;
+    grid-template-columns: auto 100px 100px
+    
+}
+
+h1 {
+    padding-bottom: 1.2rem;
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    border-bottom-color: var(--red);
+    margin-top: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+article p, ul { 
+    font-family: 'Noto Sans', sans-serif;
+}
+
+article {
+    background: #FFFFFF;
+    width: 60%;
+    padding: 2rem;
+    display: block;
+    margin: 8rem auto;   
+ }
+/* #################### Index (About Me)######################*/
+
+ article.intro {
+    grid-column: 1 / span 1;
+ }
+
+ img.self {
+    float: left;
+    margin: .5rem 2.2rem .5rem 0rem;
+}
+
+ul.aboutMe li{
+    padding: .3rem;
+    /* margin-left: 11rem; */
+}
+
+aside {
+    grid-column: 2 / span 1;
+   align-self: center;
+   cursor: pointer;
+
+}
+
+aside img {
+    width: 100px;
+    height: 100px;
+}
+/* #################### Portfolio ###################### */
+article.port {
+    grid-column: 1 / -1;
+}
+
+.gridBox {
+    display: grid;
+    grid-gap: 6px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-auto-rows: 200px
+}
+    
+.imgBox {
+    position: static;
+}
+
+ .imgBox img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+ }
+
+.imgBox h2 {
+    background: var(--t-yellow);
+    color: white;
+    font-size: 1rem;
+    font-family: 'Noto Sans', sans-serif;
+    position: relative;
+    text-align: center;
+    width: 100%;
+    bottom: 4rem;
+}
+/* #################### Contact Me ###################### */
+form {
+    grid-column: 1 / -1;
+    background: #FFFFFF;
+    width: 60%;
+    padding: 2rem;
+    display: block;
+    margin: 8rem auto; 
+}
+input {
+    width: 100%;
+    line-height: 1.5rem;
+    border: 1px solid rgba(128, 128, 128, 0.459);
+    border-radius: 4px;
+}
+
+input.message {
+    width: 100%;
+    height: 100px;
+}
+ h4 {
+    font-family: 'Noto Sans', sans-serif; 
+ }
+
+aside {
+    
+}
+
+/* ################### NavBar ###########################*/
+nav {
+    grid-column: 1 / -1;
+    width: 100%;
+    margin: 0;
+    background-color: #fff;
+}
+
+nav ul.topnav {
+    overflow: hidden;
+    margin: 0 15%;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+ul.topnav li {
+    list-style: none;
+}
+
+ul.topnav li.left {
+    font-size: 2rem;
+    font-family: 'Montserrat', sans-serif;
+    padding: 1rem;
+    border-bottom: 3px solid var(--red);
+    margin-right: auto; 
+    flex: 0 4 auto;
+}
+
+ul.topnav li.right {
+    font-size: 1.2rem;
+    font-family: 'Noto Sans', sans-serif;
+    padding: 0 1rem;
+    margin: 1.4rem 0;
+    flex: 0 2 auto;
+}
+
+ul.topnav li.right:nth-child(3) { 
+    border-right: solid 1px var(--red);
+    border-left: solid 1px var(--red);
+}
+
+ul.topnav li a {
+    display: block;
+    text-decoration: none;
+    color: #666;
+    transition: 1.8s ease;
+}
+
+ul.topnav li a:hover {
+    background-color: var(--yellow);
+    color: #fff;
+}
+
+/* ################### Footer ################### */
+footer {  
+    grid-column: 1 / -1;
+    background-color: var(--blue);
+    display: grid;
+    grid-template: 80px 50px / 1fr 2fr 1fr;
+    grid-row: 4 / 5;
+    width: 100%;
+    justify-content: space-between;
+}
+
+footer ul {
+    grid-column: 2 / 3;
+    grid-row: 1 / 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin: 0;
+}
+
+footer ul li {
+    list-style: none;
+    padding: 2rem;
+}
+
+footer ul li:nth-child(2) { 
+    border-right: solid 1px grey;
+    border-left: solid 1px grey;
+}
+
+footer img {
+    grid-column: 2 /3;
+    grid-row: 2 / 2;
+    margin: auto;
+}
+
+/* ######################Media Query#####################*/
+
+@media screen and (min-width: 980px) {
+
+}
+
+@media screen and (max-width: 768px) {
+aside, article.intro {
+    grid-column: 1 / -1;
+}
+aside {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+nav ul.topnav {
+    margin: 5%;
+}
+footer ul {
+    
+}
+}
+
+@media screen and (max-width: 640px) {
+aside, article.intro {
+    grid-column: 1 / -1;
+}
+aside {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+nav {
+    background-color: grey;
+}
+nav ul.topnav {
+    margin: 0;
+}
+ul.topnav li a {
+    color: white;
+}
+footer ul {
+    
+}
+}
